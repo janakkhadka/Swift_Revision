@@ -127,11 +127,93 @@ var total = 0
 for i in 0..<4 {
     total += i
 }
-print(total)
+//print(total)
 
 
 
 //fucntions and closures
+func greet(_ person: String, day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+//print(greet("Bob", day: "Tuesday"))
+
+func calculateMath(scores: [Int]) -> (min: Int, max: Int, sum: Int){
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+    
+    for score in scores {
+        if score > max {
+            max = score
+        }else if score < min {
+            min = score
+        }
+        sum += score
+    }
+    return (min, max, sum)
+}
+
+let mathCalulation = calculateMath(scores: [1,2,7,5,4,7,8,12,34,3,8])
+//print(mathCalulation)
+//print(mathCalulation.2)
+//print(mathCalulation.sum)
+
+//nested function
+func outerFunction() -> Int {
+    var a = 5
+    func innerFunction(){
+        a += 10
+    }
+    innerFunction()
+    return a
+}
+//print(outerFunction())
+
+
+// function can return another function
+func outerFunction1() -> Int {
+    var a = 5
+    func innerFunction() -> Int{
+        a += 10
+        return a
+    }
+    return innerFunction()
+}
+//print(outerFunction1())
+
+
+
+//passing function as one of its arguments
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {  //list array ho and conditions function ho, conditions le int linxa ra bool return garxa
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+var numbers = [20, 19, 7, 12]
+//print(hasAnyMatches(list: numbers, condition: lessThanTen))
+
+numbers.map({ (number: Int) -> Int in
+    let result = number * 2
+    return result
+})
+
+//map le list ma vako data lai need anusar operation garera naya list banauna help garxa
+let mappedNumbers = numbers.map({ number in 3 * number })
+//print(mappedNumbers)
+
+let sortedNumbers = numbers.sorted { $0 > $1 }
+print(sortedNumbers)
+
+
+
+
+
 
 
 
