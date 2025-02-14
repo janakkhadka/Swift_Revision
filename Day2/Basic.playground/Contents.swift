@@ -207,8 +207,102 @@ numbers.map({ (number: Int) -> Int in
 let mappedNumbers = numbers.map({ number in 3 * number })
 //print(mappedNumbers)
 
-let sortedNumbers = numbers.sorted { $0 > $1 }
-print(sortedNumbers)
+let sortedNumbers = numbers.sorted { $0 < $1 }  //closure ho, closure vanya anonymous function ho
+//If $0 is greater than $1, it keeps $0 before $1.
+//print(sortedNumbers)
+
+
+//class and objects
+class Shape {
+    var numberOfSides: Int = 0
+    
+    func simpleDescription() -> String {
+        return "no of sides = \(numberOfSides) of shape"
+    }
+}
+
+var shape = Shape()  //object creation of class Shape
+//print(shape.simpleDescription())
+shape.numberOfSides = 5
+//print(shape.simpleDescription())
+
+//constuctor in swift
+class Shape1 {
+    var numberOfSides: Int = 0
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func simpleDescription() -> String {
+        return "no of sides = \(numberOfSides) of shape"
+    }
+}
+
+class Square: Shape1 {
+    var sideLength: Double
+
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)  //superclass maa name ko default value xaina so super.init garera initialize gareko yaa bata
+        numberOfSides = 4 //just numberOfSides ko value modify gareko ho
+    }
+
+
+    func area() -> Double {
+        return sideLength * sideLength
+    }
+
+
+    override func simpleDescription() -> String {
+        return "\(name) sides of length \(sideLength)."
+    }
+}
+let test = Square(sideLength: 5.2, name: "my test square")
+//print(test.area())
+//print(test.simpleDescription())
+
+
+//getter amd setter
+class EquilateralTriangle: Shape1 {
+    var sideLength: Double = 0.0
+
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 3
+    }
+
+
+    var perimeter: Double {
+        get {
+             return 3.0 * sideLength
+        }
+        set {
+            sideLength = newValue / 3.0
+        }
+    }
+
+
+    override func simpleDescription() -> String {
+        return "An equilateral triangle with sides of length \(sideLength)."
+    }
+}
+var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
+print(triangle.perimeter) //traomg;e.perimeter garda get block run hunxa mathi
+triangle.perimeter = 9.9 //yo garda set block run hunxa
+print(triangle.sideLength)
+
+
+
+
+//enumerations
+//defines a group of related values in a type-safe way. It helps to work with a fixed set of options, making code more readable and less error-prone.
+
+
 
 
 
