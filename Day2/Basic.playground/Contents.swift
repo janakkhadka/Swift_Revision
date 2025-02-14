@@ -292,15 +292,80 @@ class EquilateralTriangle: Shape1 {
     }
 }
 var triangle = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
-print(triangle.perimeter) //traomg;e.perimeter garda get block run hunxa mathi
+//print(triangle.perimeter) //traomg;e.perimeter garda get block run hunxa mathi
 triangle.perimeter = 9.9 //yo garda set block run hunxa
-print(triangle.sideLength)
+//print(triangle.sideLength)
 
 
 
 
 //enumerations
 //defines a group of related values in a type-safe way. It helps to work with a fixed set of options, making code more readable and less error-prone.
+enum Day {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+}
+
+let today = Day.friday  //first way
+let day: Day = .saturday  //second way
+
+//switch today {
+//case .sunday:
+//    print( "Today is Sunday")
+//case .saturday:
+//    print("Today is Saturday")
+//case .friday:
+//    print("Today is Friday")
+//default:
+//    print("Today is neither Sunday nor Saturday")
+//}
+
+enum Rank: Int {
+    case one = 5
+    case two, three, four, five
+    case abc
+}
+
+let level = Rank.abc
+//print(level.rawValue)  //raw value maa chai one = 1 vayesi baki ko aafai 1 le badeko hunxa like indexing
+//output 10
+
+enum Planet: String {
+    case earth = "Earth"
+    case mars = "Mars"
+}
+
+//print(Planet.earth.rawValue) // Output: "Earth"
+
+
+//enum with methods
+enum TrafficLight {
+    case red, yellow, green
+
+    func description() -> String {
+        switch self {
+        case .red:
+            return "Stop"
+        case .yellow:
+            return "Get Ready"
+        case .green:
+            return "Go"
+        }
+    }
+}
+
+let signal = TrafficLight.red
+print(signal.description()) // Output: "Stop"
+
+	
+
+
+
 
 
 
