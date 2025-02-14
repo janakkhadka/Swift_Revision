@@ -360,9 +360,60 @@ enum TrafficLight {
 }
 
 let signal = TrafficLight.red
-print(signal.description()) // Output: "Stop"
+//print(signal.description()) // Output: "Stop"
 
-	
+
+
+//structure
+struct Person {
+    var name: String
+    var age: Int
+    
+    mutating func celebrateBirthday() {
+        age += 1
+    }
+}
+
+var person1 = Person(name: "Janak", age: 23)
+var person2 = person1  // Creates a copy
+
+person2.age = 24
+//print(person1.age)  // Output: 23
+//print(person2.age)  // Output: 24 , separate copy ho
+
+
+struct Counter {
+    var value: Int
+    
+    mutating func increment(){  //In Swift, structures (struct) and enumerations (enum) are value types. This means that when you modify a property inside a method, you're actually modifying a copy of the struct, not the original instance.To allow modification of properties inside a method, Swift requires you to mark the method as mutating.
+        value += 1
+    }
+}
+var counter = Counter(value: 0)
+counter.increment()
+//print(counter.value)
+counter.increment()
+//print(counter.value)
+
+
+//nested structure
+//custom or user defined daata types used like address type using in user type
+struct Address {
+    var city: String
+    var country: String
+}
+
+struct User {
+    var name: String
+    var address: Address
+}
+
+let home = Address(city: "Kathmandu", country: "Nepal")
+let user = User(name: "Janak", address: home)
+
+print(user.address) // Output: Kathmandu
+
+
 
 
 
