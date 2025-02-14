@@ -439,8 +439,96 @@ func fetchData() async -> String {
 
 Task {//Use Task to call asynchronous functions from synchronous code, without waiting for them to return.
     let result = await fetchData()
-    print(result)  //2 second wait garera data received print garxa
+    //print(result)  //2 second wait garera data received print garxa
 }
+
+
+
+//error handling with swift
+
+//1. yo tarika chai function banaune throws garne ani call huda kheri error catch garxa try le ani catch le handle garne
+enum NetworkError: Error {
+    case noInternet
+    case serverError
+    case invalidResponse
+}
+
+func fetchData(from url: String) throws -> String {
+    if url.isEmpty {
+        throw NetworkError.invalidResponse
+    }
+    return "Data from \(url)"
+}
+
+do{
+    let result = try fetchData(from: "")
+    print(result)
+}catch NetworkError.noInternet {
+    print("No Intenet Connection")
+}catch NetworkError.serverError {
+    print("server error occurred")
+}catch {
+    print("Unexpected error: \(error).")
+}
+
+//2. simple way, error j ho dekhaidine
+// tara suruko ra yo ustai nai ho farak xaina hai
+do {
+    let data = try fetchData(from: "www.google.com.np")
+    print(data)
+}catch {
+    print("error fetching data: \(error)")
+}
+
+
+
+//generic in swift
+// generic ko benefits haru
+//Avoid Code Duplication – No need to write the same function for multiple types.
+//Type Safety – Ensures type correctness at compile time.
+
+//without generic
+func swapInts(_ a: inout Int, _ b: inout Int) {  //inout keyword le chai aako value lai modify garna dinxa
+    let temp = a
+    a = b           // this is possible because of inout keyword
+    b = temp
+}
+
+func swapStrings(_ a: inout String, _ b: inout String) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+//with generic
+// `T` is a placeholder for any type
+func swapValues<T>(_ a: inout T, _ b: inout T) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+var num1 = 10, num2 = 20
+swapValues(&num1, &num2)
+
+var str1 = "Hello", str2 = "World"
+swapValues(&str1, &str2)
+
+/*
+ 📌 Real-World Use Cases of generic
+
+ ✅ Reusable Data Structures
+
+     Linked lists, stacks, and queues can store any data type.
+
+ ✅ Networking & API Responses
+
+     Use generics to create flexible API response handlers.
+
+ ✅ UI Components
+
+     Create reusable UI elements that work with different data types.
+ */
 
 
 
