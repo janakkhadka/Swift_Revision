@@ -411,7 +411,40 @@ struct User {
 let home = Address(city: "Kathmandu", country: "Nepal")
 let user = User(name: "Janak", address: home)
 
-print(user.address) // Output: Kathmandu
+//print(user.address) // Output: Kathmandu
+
+
+//concurrency in swift
+func fetchUserData(from server: String) async -> Int {
+    if server == "primary" {
+        return 97
+    }
+    return 501
+}
+
+func fetchUsername(from server: String) async -> String {
+    let userID = await fetchUserData(from: server)
+    if userID == 501 {
+        return "John Appleseed"
+    }
+    return "Guest"
+}
+
+
+//async and await with sleep
+func fetchData() async -> String {
+    sleep(2)  // Simulating network delay 2 seconds ko lagi
+    return "Data received"
+}
+
+Task {//Use Task to call asynchronous functions from synchronous code, without waiting for them to return.
+    let result = await fetchData()
+    print(result)  //2 second wait garera data received print garxa
+}
+
+
+
+
 
 
 
