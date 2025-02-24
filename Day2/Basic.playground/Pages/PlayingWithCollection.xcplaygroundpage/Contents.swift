@@ -28,7 +28,31 @@ for letter in abc {
 }
 
 for (index, letter) in abc.enumerated() {
-    print("\(index+1): \(letter)")
+    //print("\(index+1): \(letter)")
 }
+
+
+
+//set
+//A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important, or when you need to ensure that an item only appears once.
+
+var firstSet: Set<String> = ["a","b","c","d"]
+//print(firstSet)
+//print(firstSet.count)
+
+//insert new item
+firstSet.insert("e")
+//print(firstSet)
+firstSet.insert("f")
+//print(firstSet)
+firstSet.insert("h")
+//print(firstSet)
+
+//print(firstSet.sorted()) //.sorted() le tei line or block maa matra sort gardinxa, but not actually
+
+for set in firstSet{
+    //print(set)
+}
+
 
 
