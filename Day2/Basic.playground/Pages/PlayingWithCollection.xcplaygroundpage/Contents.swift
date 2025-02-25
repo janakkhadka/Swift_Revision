@@ -83,7 +83,17 @@ secondDic["name"] = "ronaldo" //name vanne key ko value change gareko
 //print(secondDic)
 
 if let oldName = secondDic.updateValue( "janak", forKey: "name"){ //old value vetera update vayo ki nai vanera check garne sahit lai yo use garne
-    print("the old name is \(oldName)")
+    //print("the old name is \(oldName)")
 }
 
+if let removeAge = secondDic.removeValue(forKey: "age"){
+    //print("age removed is \(removeAge)")
+}else {
+    print("not removed")
+}
+
+//iterating over dictinary
+for (key, value) in secondDic {
+    print("\(key): \(value)")
+}
 
