@@ -67,4 +67,8 @@ print(oddDigits.subtracting(singleDigitPrimeNumbers).sorted())
 print(oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted())
 
 
+//dictionaries
+var firstDic: [Int: String] = [:] //empty dictionary
+
+
 
