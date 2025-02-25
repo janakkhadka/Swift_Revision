@@ -15,7 +15,7 @@ var finalArray = firstArray + [1,2,3,4,5]
 //print(finalArray)
 
 //appending/deleting values
-var abc: [String] = ["a","b","c","d"]
+var abc: [String] = ["a","b","c","d"] //array with literals
 abc.append("e")
 //print(abc)
 abc.insert("f", at: 1)
@@ -36,7 +36,7 @@ for (index, letter) in abc.enumerated() {
 //set
 //A set stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important, or when you need to ensure that an item only appears once.
 
-var firstSet: Set<String> = ["a","b","c","d"]
+var firstSet: Set<String> = ["a","b","c","d"] //set with literals
 //print(firstSet)
 //print(firstSet.count)
 
@@ -61,14 +61,22 @@ let evenDigits: Set = [0, 2, 4, 6, 8]
 let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
 
 
-print(oddDigits.union(evenDigits).sorted())
-print(oddDigits.intersection(evenDigits).sorted())
-print(oddDigits.subtracting(singleDigitPrimeNumbers).sorted())
-print(oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted())
+//print(oddDigits.union(evenDigits).sorted())
+//print(oddDigits.intersection(evenDigits).sorted())
+//print(oddDigits.subtracting(singleDigitPrimeNumbers).sorted())
+//print(oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted())
 
 
 //dictionaries
 var firstDic: [Int: String] = [:] //empty dictionary
+
+firstDic[1] = "janak"  // 1 key ho int typeko, janak value ho string typeko
+//print(firstDic)
+
+firstDic = [:] //making again empty
+
+var secondDic: [String: String] = ["name":"janak","age":"23"] //creating dictionary with literals
+print(secondDic)
 
 
 
