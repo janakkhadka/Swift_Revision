@@ -67,7 +67,7 @@ let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
 //print(oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted())
 
 
-//dictionaries
+//dictionaries, yesma ni order matter gardaina
 var firstDic: [Int: String] = [:] //empty dictionary
 
 firstDic[1] = "janak"  // 1 key ho int typeko, janak value ho string typeko
@@ -76,7 +76,14 @@ firstDic[1] = "janak"  // 1 key ho int typeko, janak value ho string typeko
 firstDic = [:] //making again empty
 
 var secondDic: [String: String] = ["name":"janak","age":"23"] //creating dictionary with literals
-print(secondDic)
+//print(secondDic)
 
+
+secondDic["name"] = "ronaldo" //name vanne key ko value change gareko
+//print(secondDic)
+
+if let oldName = secondDic.updateValue( "janak", forKey: "name"){ //old value vetera update vayo ki nai vanera check garne sahit lai yo use garne
+    print("the old name is \(oldName)")
+}
 
 
