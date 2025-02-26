@@ -89,11 +89,19 @@ if let oldName = secondDic.updateValue( "janak", forKey: "name"){ //old value ve
 if let removeAge = secondDic.removeValue(forKey: "age"){
     //print("age removed is \(removeAge)")
 }else {
-    print("not removed")
+    //print("not removed")
 }
 
 //iterating over dictinary
 for (key, value) in secondDic {
-    print("\(key): \(value)")
+    //print("\(key): \(value)")
 }
 
+
+var singleLine = "janak"
+var multiLine = """
+janak khadka is my name 
+i live in dhankuta
+"""
+//print(singleLine)
+//print(multiLine)
