@@ -26,3 +26,14 @@ repeat {
 } while a < 5
 
 
+//if
+let b = 5
+let name = if b > 4 {
+    "janak"
+}else {
+    "kishor"
+}
+//print(name)
+
+
+
