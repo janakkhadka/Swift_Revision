@@ -9,8 +9,20 @@ for (key, value) in dictionary {
 }
 
 for index in 1...5 {
-    print(index)
+    //print(index)
 }
 
+//while
+var a = 0;
+while a < 5 {
+    //print(a)
+    //a += 1
+}
+
+//repeat-while, do-while jastai ho
+repeat {
+    //print("hello")
+    //a += 1
+} while a < 5
 
 

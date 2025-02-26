@@ -98,10 +98,10 @@ for (key, value) in secondDic {
 }
 
 
-var singleLine = "janak"
-var multiLine = """
-janak khadka is my name 
-i live in dhankuta
-"""
+//var singleLine = "janak"
+//var multiLine = """
+//janak khadka is my name 
+//i live in dhankuta
+//"""
 //print(singleLine)
 //print(multiLine)
