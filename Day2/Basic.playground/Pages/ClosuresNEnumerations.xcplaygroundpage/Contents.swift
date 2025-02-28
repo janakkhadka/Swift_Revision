@@ -8,4 +8,10 @@ var names = ["janak", "bishal", "kishor", "subash", "dhrub", "sujan", "dipesh", 
 var sortedNames = names.sorted(by: { s1, s2 in
     s1 < s2
 })
-print(sortedNames)
+
+var sortedNamesOperatorMethod = names.sorted(by: <)  //xoto tarika ho
+//print(sortedNames)
+
+
+
+
