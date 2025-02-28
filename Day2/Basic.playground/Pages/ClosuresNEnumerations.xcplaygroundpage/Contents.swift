@@ -22,7 +22,16 @@ func makeIncrementer(incrementAmount: Int) -> () -> Int {
 }
 
 let incrementByTwo = makeIncrementer(incrementAmount: 2)
-print(incrementByTwo()) //2 aauxa
-print(incrementByTwo()) //4 aauxa
+//print(incrementByTwo()) //2 aauxa
+//print(incrementByTwo()) //4 aauxa
+
+
+
+func performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) -> Int {
+    return operation(a, b)
+}
+
+let result = performOperation(a: 5, b: 3) { $0 + $1 }
+//print(result) //8
 
 
