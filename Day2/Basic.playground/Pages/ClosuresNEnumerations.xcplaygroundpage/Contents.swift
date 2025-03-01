@@ -47,15 +47,28 @@ enum CompassPoint {
 var directionHead = CompassPoint.east
 directionHead = .south
 
-switch directionHead {
-    case .north:
-        print("heading towards north")
-    case .south:
-        print( "heading towards south")
-    case .east:
-        print("heading towards east")
-    case .west:
-        print("heading towards west")
+//switch directionHead {
+//    case .north:
+//        print("heading towards north")
+//    case .south:
+//        //print( "heading towards south")
+//    case .east:
+//        print("heading towards east")
+//    case .west:
+//        print("heading towards west")
+//}
+
+enum Beverage: CaseIterable {
+    case coffee, tea, juice
 }
+let numberOfChoices = Beverage.allCases.count
+print("\(numberOfChoices) beverages available")
+
+for beverage in Beverage.allCases {
+    print(beverage)
+}
+
+
+
 
 
