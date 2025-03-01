@@ -58,21 +58,21 @@ directionHead = .south
 //        print("heading towards west")
 //}
 
-enum Beverage: CaseIterable {
-    case coffee, tea, juice
-}
-let numberOfChoices = Beverage.allCases.count
-print("\(numberOfChoices) beverages available")
-
-for beverage in Beverage.allCases {
-    print(beverage)
-}
-
-enum ASCIIControlCharacter: Character {
-    case tab = "\t"
-    case lineFeed = "\n"
-    case carriageReturn = "\r"
-}
+//enum Beverage: CaseIterable {
+//    case coffee, tea, juice
+//}
+//let numberOfChoices = Beverage.allCases.count
+//print("\(numberOfChoices) beverages available")
+//
+//for beverage in Beverage.allCases {
+//    print(beverage)
+//}
+//
+//enum ASCIIControlCharacter: Character {
+//    case tab = "\t"
+//    case lineFeed = "\n"
+//    case carriageReturn = "\r"
+//}
 
 
 
