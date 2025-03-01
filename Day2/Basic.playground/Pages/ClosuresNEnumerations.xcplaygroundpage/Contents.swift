@@ -35,3 +35,13 @@ let result = performOperation(a: 5, b: 3) { $0 + $1 }
 //print(result) //8
 
 
+
+//enumeration
+enum CompassPoint {
+    case north
+    case south
+    case west
+    case east
+}
+
+
