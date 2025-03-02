@@ -18,14 +18,17 @@ class Person {
 }
 
 var person = Person()
-print("\(person.address)")
+//print("\(person.address)")
 
 person.address = Address(city: "Kaushaltar", district: "Bhaktapur", province: "Bagmati Province", country: "Nepal") //assign new values
-print("\(person.address)")
+//print("\(person.address)")
 
 
 //structure memberwise initializer
 let address = Address(city: "Sallahghari", district: "Bhaktapur", province: "Bagmati Province", country: "Nepal") //yo chai structure maa matrai milxa class maa mildaina
-print("\(address)")
+//print("\(address)")
 
 
+var tempAdd = address
+tempAdd.city = "Balkumari"
+print(tempAdd)
