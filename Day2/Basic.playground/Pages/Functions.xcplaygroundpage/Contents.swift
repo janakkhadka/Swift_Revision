@@ -22,3 +22,11 @@ func sum(_ numbers: Int...) -> Int {
 }
 //print(sum(1,2,3,4,5))
 
+//inout paramters
+func increment(_ number: inout Int) {
+    number += 1
+}
+var x = 10
+increment(&x)
+print(x)
+
