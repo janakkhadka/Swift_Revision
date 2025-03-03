@@ -38,10 +38,10 @@ let person1 = Person()
 person1.address = tempAdd
 person1.name = "Garima Khulal"
 person1.salary = 40000.00
-print(person1.salary)
+//print(person1.salary)
 
 let person2 = person1
 person2.salary = 25000.00
-print(person1.salary) //25000.00 nai aauxa reference type vayeko le
-print(person2.salary)
+//print(person1.salary) //25000.00 nai aauxa reference type vayeko le
+//print(person2.salary)
 
