@@ -51,12 +51,24 @@ class VendingMachine {
 }
 
 //do
-func eat(item: String) throws {
-    do {
-        try vendingMachine.vend(itemNamed: item)
-    } catch VendingMachineError.invalidSelection, VendingMachineError.insufficientFunds, VendingMachineError.outOfStock {
-        print("Invalid selection, out of stock, or not enough money.")
+
+enum StatisticsError: Error {
+    case noRatings
+    case invalidRating(Int)
+}
+
+func summarize(_ ratings: [Int]) throws(StatisticsError) {
+    guard !ratings.isEmpty else { throw .noRatings }
+
+
+    var counts = [1: 0, 2: 0, 3: 0]
+    for rating in ratings {
+        guard rating > 0 && rating <= 3 else { throw .invalidRating(rating) }
+        counts[rating]! += 1
     }
+
+
+    print("*", counts[1]!, "-- **", counts[2]!, "-- ***", counts[3]!)
 }
 
 
