@@ -71,4 +71,9 @@ func summarize(_ ratings: [Int]) throws(StatisticsError) {
     print("*", counts[1]!, "-- **", counts[2]!, "-- ***", counts[3]!)
 }
 
+func someThrowingFunction() -> throws {
+    let ratings = [1, 2, 3, 2, 2, 1]
+    try summarize(ratings)
+}
+
 
