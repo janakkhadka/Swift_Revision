@@ -77,3 +77,9 @@ func someThrowingFunction() -> throws {
 }
 
 
+func someThrowingFunction() -> throws(any Error) {
+    let ratings = [1, 2, 3, 2, 2, 1]
+    try summarize(ratings)
+}
+
+
