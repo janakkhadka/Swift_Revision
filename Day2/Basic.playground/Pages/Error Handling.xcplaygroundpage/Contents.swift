@@ -15,19 +15,59 @@ func fetchData(from url: String) throws -> String {
     return "data loaded successfully"
 }
 
-let result = try? fetchData(from: "invalid_url")
-print(result)  // nil, just simple wala error handling
+let result = try? fetchData(from: "https://www.google.com")
+//print(result)  // nil, just simple wala error handling
 
+//do catch
+//do {
+//    let result = try fetchData(from: "invalid_url")
+//    print(result)
+//} catch NetworkError.badURL {
+//    print("Invalid URL provided.")
+//} catch NetworkError.noInternet {
+//    print("No internet connection.")
+//} catch let error {
+//    print("An unexpected error occurred: \(error)")
+//}
+
+
+//example 2
+enum FileError: Error {
+    case fileNotFound
+}
+
+func readFile(named fileName: String) throws -> String {
+    if fileName != "data.txt" {
+        throw FileError.fileNotFound
+    }
+    return "File content here..."
+}
 
 do {
-    let result = try fetchData(from: "invalid_url")
+    let content = try readFile(named: "wrongfile.txt")
+    print(content)
+} catch FileError.fileNotFound {
+    print("File not found.")
+}
+
+
+//example 3
+enum MathError: Error {  // error vaneko protocol ho
+    case divisionByZero
+}
+
+func divide(_ a: Double, by b: Double) throws -> Double {
+    if b == 0 {
+        throw MathError.divisionByZero
+    }
+    return a/b
+}
+
+do {
+    let result = try divide(10, by: 0)
     print(result)
-} catch NetworkError.badURL {
-    print("Invalid URL provided.")
-} catch NetworkError.noInternet {
-    print("No internet connection.")
-} catch let error {
-    print("An unexpected error occurred: \(error)")
+} catch MathError.divisionByZero {
+    print("Cannot divide by zero")
 }
 
 
