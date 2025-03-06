@@ -70,6 +70,31 @@ do {
     print("Cannot divide by zero")
 }
 
+//example 4
+enum UserError: Error {
+    case invalidAge
+}
+
+struct User {
+    let name: String
+    let age: Int
+    
+    init(name: String, age: Int) throws {
+        if age < 0 {
+            throw UserError.invalidAge
+        }
+        
+        self.name = name
+        self.age = age
+    }
+}
+
+do {
+    let user = try User(name: "janak", age: 5)
+    print(user)
+} catch UserError.invalidAge {
+    print("Enter valid age")
+}
 
 
 
