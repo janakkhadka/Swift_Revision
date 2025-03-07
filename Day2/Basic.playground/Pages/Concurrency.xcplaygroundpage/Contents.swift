@@ -36,9 +36,31 @@ Task {
 //}
 
 //example 3
-Task{
-    print("first execution")
-    try? await Task.sleep(nanoseconds: 1_000_000_000)
-    print("after 1 second")
+//Task{
+//    //print("first execution")
+//    try? await Task.sleep(nanoseconds: 1_000_000_000)
+//    //print("after 1 second")
+//}
+
+//example4
+//concurrency with error handling
+enum LoginError: Error {
+    case invalidCredentials
+}
+
+func login(email: String, password: String) async throws -> String {
+    if email != "admin" || password != "admin" {
+        throw LoginError.invalidCredentials
+    }
+    return "Login successful!"
+}
+
+Task {
+    do {
+        let result = try await login(email: "admin", password: "jpt")
+        print(result)
+    } catch {
+        print(error)
+    }
 }
 
