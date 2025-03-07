@@ -15,3 +15,23 @@ Task {
     //print(data)
 }
 
+//example 2
+func fetchUserData() async -> String {
+    try? await Task.sleep(nanoseconds: 1_000_000_000) //1 sec
+    return "User Data"
+}
+
+func fetchUserPosts() async -> String {
+    try? await Task.sleep(nanoseconds: 2_000_000_000) //2 seconds
+    return "user posts"
+}
+
+Task{
+    async let user = fetchUserData()
+    async let posts = fetchUserPosts()
+    let result = await (user,posts)
+    print(await user) //1 sec maa aauxa
+    print(await posts)  //2 sec maa aauxa
+    print(result) //2 sec maa aauxa
+}
+
