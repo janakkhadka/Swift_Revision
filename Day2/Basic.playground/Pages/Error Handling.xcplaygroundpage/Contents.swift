@@ -43,12 +43,12 @@ func readFile(named fileName: String) throws -> String {
     return "File content here..."
 }
 
-do {
-    let content = try readFile(named: "wrongfile.txt")
-    print(content)
-} catch FileError.fileNotFound {
-    print("File not found.")
-}
+//do {
+//    let content = try readFile(named: "wrongfile.txt")
+//    print(content)
+//} catch FileError.fileNotFound {
+//    print("File not found.")
+//}
 
 
 //example 3
@@ -63,12 +63,12 @@ func divide(_ a: Double, by b: Double) throws -> Double {
     return a/b
 }
 
-do {
-    let result = try divide(10, by: 0)
-    print(result)
-} catch MathError.divisionByZero {
-    print("Cannot divide by zero")
-}
+//do {
+//    let result = try divide(10, by: 0)
+//    print(result)
+//} catch MathError.divisionByZero {
+//    print("Cannot divide by zero")
+//}
 
 //example 4
 enum UserError: Error {
@@ -89,12 +89,12 @@ struct User {
     }
 }
 
-do {
-    let user = try User(name: "janak", age: 5)
-    print(user)
-} catch UserError.invalidAge {
-    print("Enter valid age")
-}
+//do {
+//    let user = try User(name: "janak", age: 5)
+//    print(user)
+//} catch UserError.invalidAge {
+//    print("Enter valid age")
+//}
 
 
 
