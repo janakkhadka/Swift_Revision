@@ -21,4 +21,17 @@ func writeFile() {
     }
 }
 
-writeFile()
+//writeFile()
+
+func readFile() {
+    let fileURL = getDocumentsDirectory().appendingPathComponent("example.txt")
+    
+    do {
+        let content = try String(contentsOf: fileURL, encoding: .utf8)
+        print("File content: \(content)")
+    } catch {
+        print("file not found, \(error)")
+    }
+}
+
+readFile()
