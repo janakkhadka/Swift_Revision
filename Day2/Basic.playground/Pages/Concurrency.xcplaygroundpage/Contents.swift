@@ -90,7 +90,17 @@ func executeOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
     print("Result:", result)
 }
 
-executeOperation(a: 6, b: 2, operation: { $0 * $1 })
-executeOperation(a: 8, b: 4) { $0 / $1 }
+//executeOperation(a: 6, b: 2, operation: { $0 * $1 })
+//executeOperation(a: 8, b: 4) { $0 / $1 }
+
+//example 3
+let numbers = [5, 3, 8, 1, 4]
+func descendingOrder(a: Int, b: Int) -> Bool {
+    return a > b
+}
+
+let sortedNumbers = numbers.sorted(by: descendingOrder)
+print(sortedNumbers)
+
 
 
