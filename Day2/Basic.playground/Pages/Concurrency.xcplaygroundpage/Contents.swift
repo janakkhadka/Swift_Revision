@@ -66,5 +66,20 @@ Task {
 
 
 
-//A function can take another function as one of its arguments.
+//A function can take another function as one of its arguments. -> higher order function
+//exammple 1
+func add(a: Int, b: Int) -> Int {
+    return a+b
+}
+func subtract(a: Int, b: Int) -> Int {
+    return a-b
+}
+
+func performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
+    let result = operation(a,b)
+    print("result: \(result)")
+}
+
+performOperation(a: 10, b: 20, operation: add)
+performOperation(a: 10, b: 20, operation: subtract)
 
