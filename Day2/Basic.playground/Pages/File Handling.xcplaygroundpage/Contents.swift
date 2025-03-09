@@ -10,7 +10,7 @@ let docURL = getDocumentsDirectory()
 
 //
 func writeFile() {
-    let fileURL = getDocumentsDirectory().appendingPathComponent("example.txt")
+    let fileURL = docURL.appendingPathComponent("example.txt")
     let text = "file handling in swift."
     
     do {
@@ -24,7 +24,7 @@ func writeFile() {
 //writeFile()
 
 func readFile() {
-    let fileURL = getDocumentsDirectory().appendingPathComponent("example.txt")
+    let fileURL = docURL.appendingPathComponent("example.txt")
     
     do {
         let content = try String(contentsOf: fileURL, encoding: .utf8)
@@ -34,4 +34,4 @@ func readFile() {
     }
 }
 
-readFile()
+//readFile()
