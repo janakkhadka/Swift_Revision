@@ -77,7 +77,7 @@ func subtract(a: Int, b: Int) -> Int {
 
 func performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
     let result = operation(a,b)
-    print("result: \(result)")
+    //print("result: \(result)")
 }
 
 //performOperation(a: 10, b: 20, operation: add)
