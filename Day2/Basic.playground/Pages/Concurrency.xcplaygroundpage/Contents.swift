@@ -100,7 +100,7 @@ func descendingOrder(a: Int, b: Int) -> Bool {
 }
 
 let sortedNumbers = numbers.sorted(by: descendingOrder)
-print(sortedNumbers)
+//print(sortedNumbers)
 
 
 
