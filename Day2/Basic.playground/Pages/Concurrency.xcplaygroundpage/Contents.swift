@@ -11,7 +11,7 @@ func fetchData() async -> String {
 //await le chai asynchronous function call garna help garxa
 //Task {} creates a new concurrent task.
 Task {
-    let data = await fetchData()
+    //let data = await fetchData()
     //print(data)
 }
 
