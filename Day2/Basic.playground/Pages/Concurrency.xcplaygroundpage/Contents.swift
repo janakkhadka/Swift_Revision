@@ -87,7 +87,7 @@ func performOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
 //Instead of defining separate functions, we can pass closures directly.
 func executeOperation(a: Int, b: Int, operation: (Int, Int) -> Int) {
     let result = operation(a, b)
-    //print("Result:", result)
+    print("Result:", result)
 }
 
 //executeOperation(a: 6, b: 2, operation: { $0 * $1 })
